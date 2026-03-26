@@ -1,0 +1,347 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background-color: #d3d3d3;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #1a3e6f;
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.header-text h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.header-text p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+main {
+    flex: 1 0 auto;
+    width: 90%;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* ========== ГЛАВНОЕ МЕНЮ (шапка) ========== */
+#main_menu {
+    display: flex;
+    gap: 20px;
+    background: #e9ecef;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+#main_menu a {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 24px;
+    border-radius: 30px;
+    background: white;
+    color: #1a3e6f;
+    transition: all 0.3s ease;
+    border: 2px solid #1a3e6f;
+    font-size: 1rem;
+}
+
+#main_menu a.selected {
+    background: #1a3e6f;
+    color: white;
+    border-color: #ffd700;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+#main_menu a:hover {
+    background: #ffd700;
+    color: #1a3e6f;
+    border-color: #ffd700;
+    transform: translateY(-2px);
+}
+
+/* ========== ОСНОВНОЕ МЕНЮ (левая часть) ========== */
+.content-wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+#side_menu {
+    flex: 0 0 240px;
+    background: #ffffff;
+    padding: 20px 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+#side_menu a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 8px 0;
+    background: #f8f9fa;
+    border-left: 4px solid #1a3e6f;
+    color: #1a3e6f;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+}
+
+#side_menu a.selected {
+    background: #1a3e6f;
+    color: white;
+    border-left-color: #ffd700;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#side_menu a:hover {
+    background: #ffd700;
+    color: #1a3e6f;
+    transform: translateX(5px);
+}
+
+/* ========== КОНТЕЙНЕР ДЛЯ ТАБЛИЦЫ ========== */
+.table-container {
+    flex: 1;
+    overflow-x: auto;
+}
+
+/* ========== ТАБЛИЧНАЯ ВЕРСТКА ========== */
+.multiplication-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.multiplication-table th,
+.multiplication-table td {
+    border: 2px solid #1a3e6f;
+    padding: 12px 8px;
+    text-align: center;
+}
+
+.table-header {
+    background: linear-gradient(135deg, #1a3e6f 0%, #2c4d7a 100%);
+    color: white;
+    font-size: 1.2rem;
+    padding: 15px !important;
+    font-weight: bold;
+}
+
+.table-subheader {
+    background: #ffd700;
+    color: #1a3e6f;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.table-cell {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Ссылки внутри таблицы */
+.num-link {
+    text-decoration: none;
+    color: #1a3e6f;
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+.num-link:hover {
+    background: #ffd700;
+    color: #1a3e6f;
+    transform: scale(1.05);
+}
+
+/* ========== БЛОЧНАЯ ВЕРСТКА ========== */
+.multiplication-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.block-column {
+    flex: 1;
+    min-width: 110px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.block-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.block-single {
+    flex: 1;
+    max-width: 300px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.block-title {
+    background: linear-gradient(135deg, #1a3e6f 0%, #2c4d7a 100%);
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.block-content {
+    padding: 15px;
+}
+
+.multiplication-row {
+    padding: 8px 12px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 0.95rem;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.multiplication-row:hover {
+    background: #fff3cd;
+}
+
+.multiplication-row .num-link {
+    font-weight: bold;
+}
+
+/* ========== ИНФОРМАЦИОННЫЙ БЛОК (подвал внутри main) ========== */
+.info-footer {
+    margin-top: 30px;
+    padding: 20px;
+    background: #e9ecef;
+    border-radius: 8px;
+    border-left: 5px solid #ffd700;
+    font-size: 0.95rem;
+    color: #1a3e6f;
+    text-align: center;
+}
+
+.info-footer p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ========== ОСНОВНОЙ ФУТЕР ========== */
+footer {
+    flex-shrink: 0;
+    background-color: #2c4d7a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+    width: 100%;
+    border-top: 3px solid #ffd700;
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    main {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    #side_menu {
+        flex: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    #side_menu a {
+        flex: 1;
+        min-width: 100px;
+        text-align: center;
+    }
+    
+    .multiplication-table th,
+    .multiplication-table td {
+        padding: 6px 4px;
+        font-size: 12px;
+    }
+    
+    .block-column {
+        min-width: calc(25% - 20px);
+    }
+    
+    .multiplication-row {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .block-column {
+        min-width: calc(50% - 20px);
+    }
+    
+    #main_menu a {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .table-header,
+    .table-subheader {
+        font-size: 0.9rem;
+        padding: 8px !important;
+    }
+}
