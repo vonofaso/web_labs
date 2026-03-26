@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #1a3b2e;
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2 {
+    font-size: 24px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.menu li a:hover {
+    background-color: #2a5a45;
+    color: #fff;
+}
+
+.selected-menu {
+    background-color: #4caf50 !important;
+    color: white !important;
+    font-weight: bold;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 100px auto 100px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+h1 {
+    color: #1a3b2e;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+h2 {
+    color: #2a5a45;
+    margin: 30px 0 15px;
+    font-size: 24px;
+}
+
+p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.image-block {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.nature-photo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 3px solid #ddd;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th {
+    background-color: #1a3b2e;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #333;
+    color: #ccc;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 5px;
+}
+
+.student-info {
+    font-weight: bold;
+    color: #fff;
+    margin-top: 5px;
+}
+
+.current-datetime {
+    color: #aaffaa;
+    font-style: italic;
+}
