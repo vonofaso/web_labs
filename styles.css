@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background-color: #d3d3d3;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========== ШАПКА ========== */
+.page-header {
+    background-color: #1a3e6f;
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    margin-bottom: 20px;  /* ← ДОБАВИТЬ ЭТУ СТРОКУ */
+
+}
+
+.page-header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.page-header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.header-meta {
+    background: #ffd700;
+    color: #1a3e6f;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* ========== ОСНОВНОЙ КОНТЕЙНЕР ========== */
+.page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    width: 90%;
+    margin: 30px auto;
+    padding: 0;
+}
+
+/* ========== МЕНЮ ========== */
+.main-menu,
+.sub-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.main-menu a,
+.sub-menu a {
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.main-menu a {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #1a3e6f 0%, #2c4d7a 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.main-menu a:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #1a3e6f;
+}
+
+.sub-menu a {
+    padding: 8px 20px;
+    background: white;
+    color: #1a3e6f;
+    border: 2px solid #1a3e6f;
+}
+
+.sub-menu a:hover {
+    background: #ffd700;
+    border-color: #ffd700;
+    transform: translateY(-2px);
+}
+
+.main-menu a.active,
+.sub-menu a.active {
+    background: #ffd700;
+    color: #1a3e6f;
+    border-color: #ffd700;
+}
+
+/* ========== КАРТОЧКА КОНТЕНТА ========== */
+.content-card {
+    background: #f0f0f0;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.content-card h2 {
+    color: #1a3e6f;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ffd700;
+    display: inline-block;
+}
+
+/* ========== ТАБЛИЦА КОНТАКТОВ ========== */
+.contacts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.contacts-table th,
+.contacts-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.contacts-table th {
+    background: linear-gradient(135deg, #1a3e6f 0%, #2c4d7a 100%);
+    color: white;
+    font-weight: bold;
+}
+
+.contacts-table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.contacts-table tr:hover {
+    background: #fff3cd;
+}
+
+/* ========== ПАГИНАЦИЯ ========== */
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.pagination a {
+    min-width: 42px;
+    padding: 10px 16px;
+    border: 2px solid #1a3e6f;
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #1a3e6f;
+    background: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+    background: #ffd700;
+    border-color: #ffd700;
+    transform: translateY(-2px);
+}
+
+.pagination a.active {
+    background: #1a3e6f;
+    color: white;
+    border-color: #1a3e6f;
+}
+
+/* ========== СТАТУСЫ ========== */
+.status {
+    margin: 16px 0;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.status.success {
+    color: #155724;
+    background: #d4edda;
+    border-left: 5px solid #28a745;
+}
+
+.status.error {
+    color: #721c24;
+    background: #f8d7da;
+    border-left: 5px solid #dc3545;
+}
+
+/* ========== ФОРМА КОНТАКТА ========== */
+.contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.contact-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: bold;
+    color: #1a3e6f;
+}
+
+.contact-form .full-width {
+    grid-column: 1 / -1;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font: inherit;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 0 3px rgba(255,215,0,0.2);
+}
+
+.submit-button {
+    width: fit-content;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #1a3e6f 0%, #2c4d7a 100%);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(26,62,111,0.4);
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #1a3e6f;
+    box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+}
+
+/* ========== RECORD-LIST (аналогично меню) ========== */
+.record-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.record-list a {
+    padding: 10px 20px;
+    background: white;
+    border: 2px solid #1a3e6f;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #1a3e6f;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.record-list a:hover {
+    background: #ffd700;
+    border-color: #ffd700;
+    transform: translateY(-2px);
+}
+
+.record-list a.active {
+    background: #1a3e6f;
+    color: white;
+    border-color: #1a3e6f;
+}
+
+.delete-list a {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.delete-list a:hover {
+    background: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+/* ========== ФУТЕР ========== */
+.page-footer {
+    flex-shrink: 0;
+    background-color: #2c4d7a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+    width: 100%;
+    border-top: 3px solid #ffd700;
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+@media (max-width: 900px) {
+    .page {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .page-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-meta {
+        text-align: center;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-card {
+        padding: 20px;
+    }
+    
+    .contacts-table th,
+    .contacts-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts-table {
+        font-size: 11px;
+    }
+    
+    .contacts-table th,
+    .contacts-table td {
+        padding: 6px;
+    }
+    
+    .main-menu a,
+    .sub-menu a {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* ========== ВЕРСИЯ ДЛЯ ПЕЧАТИ ========== */
+@media print {
+    .page-header,
+    .main-menu,
+    .sub-menu,
+    .pagination,
+    .submit-button,
+    .page-footer {
+        display: none;
+    }
+    
+    .content-card {
+        padding: 0;
+        background: white;
+        box-shadow: none;
+    }
+    
+    .contacts-table {
+        box-shadow: none;
+    }
+}
